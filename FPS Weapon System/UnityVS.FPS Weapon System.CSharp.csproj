@@ -54,7 +54,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Character\MouseLook.cs" />
+    <Compile Include="Assets\Scripts\Character\PlayerCharacterController.cs" />
+    <Compile Include="Assets\Scripts\CrosshairScript.cs" />
+    <Compile Include="Assets\Scripts\GameControllerScript.cs" />
     <Compile Include="Assets\Scripts\TestBehaviourScript.cs" />
+    <Compile Include="Assets\Scripts\Weapons\CameraRaycaster.cs" />
+    <Compile Include="Assets\Scripts\Weapons\InventoryScript.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Weapons\WeaponFX.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>

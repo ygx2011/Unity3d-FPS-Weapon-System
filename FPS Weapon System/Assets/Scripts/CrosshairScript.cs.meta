@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 2b79f7ccbc10c3144b9eff4f11d92b34
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - crosshairTop: {fileID: 2800000, guid: 8da1438bbe348894498d0a0718d29bb7, type: 3}
+  - crosshairRight: {fileID: 2800000, guid: dfe913c759fef1e4e8e5533229792743, type: 3}
+  - crosshairButtom: {fileID: 2800000, guid: 8da1438bbe348894498d0a0718d29bb7, type: 3}
+  - crosshairLeft: {fileID: 2800000, guid: dfe913c759fef1e4e8e5533229792743, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
