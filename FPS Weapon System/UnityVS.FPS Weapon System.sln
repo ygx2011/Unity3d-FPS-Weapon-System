@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.FPS Weapon System.CSharp", "UnityVS.FPS Weapon System.CSharp.csproj", "{6CF19DBC-A0A2-8377-162D-3D8561DE260F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.FPS Weapon System.CSharp.Editor", "UnityVS.FPS Weapon System.CSharp.Editor.csproj", "{AC6E94F4-D94E-F333-2FD9-0405C68577C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{6CF19DBC-A0A2-8377-162D-3D8561DE260F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CF19DBC-A0A2-8377-162D-3D8561DE260F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CF19DBC-A0A2-8377-162D-3D8561DE260F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC6E94F4-D94E-F333-2FD9-0405C68577C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC6E94F4-D94E-F333-2FD9-0405C68577C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC6E94F4-D94E-F333-2FD9-0405C68577C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC6E94F4-D94E-F333-2FD9-0405C68577C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

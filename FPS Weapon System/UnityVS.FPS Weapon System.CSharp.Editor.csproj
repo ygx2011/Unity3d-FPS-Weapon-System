@@ -5,17 +5,17 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6CF19DBC-A0A2-8377-162D-3D8561DE260F}</ProjectGuid>
+    <ProjectGuid>{AC6E94F4-D94E-F333-2FD9-0405C68577C9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace></RootNamespace>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
-    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityProjectType>Editor:5</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>4.6.1f1</UnityVersion>
   </PropertyGroup>
@@ -52,11 +52,20 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\UnityAssemblies\UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Graphs.dll</HintPath>
+    </Reference>
     <Reference Include="ProBuilderCore">
       <HintPath>Assets\ProCore\Prototype\Classes\ProBuilderCore.dll</HintPath>
     </Reference>
     <Reference Include="ProBuilderMeshOps">
       <HintPath>Assets\ProCore\Prototype\Classes\ProBuilderMeshOps.dll</HintPath>
+    </Reference>
+    <Reference Include="ProBuilderEditor">
+      <HintPath>Assets\ProCore\Prototype\Editor\ProBuilderEditor.dll</HintPath>
     </Reference>
     <Reference Include="ProCore">
       <HintPath>Assets\ProCore\Shared\Code\ProCore.dll</HintPath>
@@ -64,17 +73,44 @@
     <Reference Include="SixBySeven">
       <HintPath>Assets\ProCore\Shared\Code\SixBySeven.dll</HintPath>
     </Reference>
+    <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+      <HintPath>Assets\UnityVS\Editor\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="SyntaxTree.VisualStudio.Unity.Messaging">
+      <HintPath>Assets\UnityVS\Editor\SyntaxTree.VisualStudio.Unity.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityVS.VersionSpecific">
+      <HintPath>Assets\UnityVS\Editor\UnityVS.VersionSpecific.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ProCore\Prototype\Scripts\RebuildMeshOnWake.cs" />
-    <Compile Include="Assets\Scripts\Character\MouseLook.cs" />
-    <Compile Include="Assets\Scripts\Character\PlayerCharacterController.cs" />
-    <Compile Include="Assets\Scripts\CrosshairScript.cs" />
-    <Compile Include="Assets\Scripts\GameControllerScript.cs" />
-    <Compile Include="Assets\Scripts\Weapons\CameraRaycaster.cs" />
-    <Compile Include="Assets\Scripts\Weapons\InventoryScript.cs" />
-    <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
-    <Compile Include="Assets\Scripts\Weapons\WeaponFX.cs" />
+    <ProjectReference Include="UnityVS.FPS Weapon System.CSharp.csproj">
+      <Project>{6CF19DBC-A0A2-8377-162D-3D8561DE260F}</Project>
+      <Name>UnityVS.FPS Weapon System.CSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Actions\ProBuilderizeGameObject.cs" />
+    <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\File\SaveLoadPbObjects.cs" />
+    <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Geometry\ExtrudeFace.cs" />
+    <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Geometry\PivotTool.cs" />
+    <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Repair\CleanUpLeakedMeshes.cs" />
+    <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Repair\ComponentCheck.cs" />
+    <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Repair\DegenerateTris.cs" />
+    <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Repair\FixGameObjectFlags.cs" />
+    <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Repair\FixShaderWantsNormals.cs" />
+    <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Repair\ForceMakeUnique.cs" />
+    <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Repair\ForceMeshRefresh.cs" />
+    <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Repair\InvertUVScale.cs" />
+    <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Repair\RebuildSharedIndices.cs" />
+    <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Repair\RebuildVertexCaches.cs" />
+    <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Selection\EdgeSelection.cs" />
+    <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Selection\ExpandSelection.cs" />
+    <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Selection\InvertSelection.cs" />
+    <Compile Include="Assets\ProCore\Prototype\Editor\ProBuilderMenuItems.cs" />
+    <Compile Include="Assets\ProCore\Prototype\Editor\pb_Preferences.cs" />
+    <Compile Include="Assets\ProCore\Prototype\Editor\pb_ScenePostProcessor.cs" />
+    <Compile Include="Assets\ProCore\Shared\About\Editor\pc_AboutWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ProCore\Prototype\About\changelog.txt" />
