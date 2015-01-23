@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class InventoryScript : MonoBehaviour {
 
-    public List<Weapon> weapons;
+    public List<WeaponName> weapons;
 
     public List<GameObject> gameWeapons;
 
@@ -35,6 +35,10 @@ public class InventoryScript : MonoBehaviour {
 
 	}
 
+    /// <summary>
+    /// Switch to weapon at given index
+    /// </summary>
+    /// <param name="_index">index of weapon</param>
     public void SwitchWeapon(int _index)
     {
         weaponIndex = _index;
@@ -43,19 +47,15 @@ public class InventoryScript : MonoBehaviour {
     /// <summary>
     /// Add weapon to inventory.
     /// </summary>
-    /// <param name="_weapon">weapon to add.</param>
-    /// <returns>Index of add weapon.</returns>
-    public int AddWeapon(Weapon _weapon)
+    /// <param name="_weapon">weapon name.</param>
+    /// <returns>Index of added weapon.</returns>
+    public int AddWeapon(WeaponName _weapon)
     {
         weapons.Add(_weapon);
         return weapons.IndexOf(_weapon);
     }
 
-    /// <summary>
-    /// this will instantiate weapon GameObject as child of WeaponManager.
-    /// </summary>
-    /// <param name="_weaponInfo">Information to instantiate GameObject correctly.</param>
-    public void InstantiateWeapon(WeaponData _weaponInfo)
+    private void InstantiateWeapon(WeaponData _weaponInfo)
     {
         
     }
